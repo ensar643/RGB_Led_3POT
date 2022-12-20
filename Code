@@ -1,0 +1,16 @@
+void setup() {
+pinMode(3, OUTPUT); //Kırmızı LED portu
+pinMode(5, OUTPUT); //Yeşil LED portu
+pinMode(6, OUTPUT); //Mavi LED portu
+}
+void loop() {
+int Rpot = analogRead(A0);
+int Rled = map(Rpot, 0, 1023, 0, 255);
+int Gpot = analogRead(A1);
+int Gled = map(Gpot, 0, 1023, 0, 255);
+int Bpot = analogRead(A2);
+int Bled = map(Bpot, 0, 1023, 0, 255);
+analogWrite(3, Rled); // Rpot değişkenini 3. porta gönderir.
+analogWrite(5, Gled); // Gpot değişkenini 5. porta gönderir.
+analogWrite(6, Bled); // Bpot değişkenini 6. porta gönderir.
+}
